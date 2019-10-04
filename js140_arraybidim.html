@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays bidimensionales</title>
+
+	<script type="text/javascript">
+		var datos = new Array(); 
+		datos[0] = new Array();
+		datos[1] = new Array();
+		datos[2] = new Array();
+		datos[3] = new Array();
+		var filas=4;
+		var columnas=4;
+		var totalC=0;
+		for (f=0; f < filas; f++) {
+			for (c=0; c < columnas; c++) {
+				
+				if (c < 3) {
+					datos[f][c] = parseInt(prompt(`Introduce un número para la fila ${f} - columna ${c}`));	
+					totalC+= datos[f][c];
+				} else {
+					datos[f][c]=totalC
+					totalC=0;
+				}
+			}
+		}
+
+		for (f in datos) {
+			for (c in datos[f]) { 
+				document.write('['+f+']['+c+'] '+datos[f][c] + ' - ');
+			} 
+				document.write(`<br>`);
+		}
+
+		for (f in datos) {
+			document.write('Total  x  fila: ['+f+'] '+datos[f][3] + '<br>');
+
+		}
+		
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
